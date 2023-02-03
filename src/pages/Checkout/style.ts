@@ -124,6 +124,10 @@ export const ButtonsContainer = styled.div`
       background: ${(props) => props.theme["base-hover"]};
       transition: 0.5s;
     }
+    &.selected {
+      background: ${(props) => props.theme["purple-light"]};
+      border: 1px solid ${(props) => props.theme["purple-dark"]};
+    }
   }
 `
 export const CoffeeContainer = styled.div`

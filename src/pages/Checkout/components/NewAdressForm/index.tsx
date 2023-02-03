@@ -1,3 +1,4 @@
+import { useFormContext } from "react-hook-form"
 import {
   CidadeInput,
   ComplementoInput,
@@ -8,32 +9,68 @@ import {
 } from "./styles"
 
 export function NewAdressForm() {
+  const { register } = useFormContext()
   return (
     <FormContainer>
-      <form>
-        <MiddleInput className="cep" type="number" placeholder="CEP" />
-      </form>
-      <form>
-        <MaxInput name="rua" placeholder="Rua" />
-      </form>
+      <label>
+        <MiddleInput
+          className="cep"
+          type="string"
+          placeholder="CEP"
+          {...register("cep")}
+        />
+      </label>
+      <label>
+        <MaxInput
+          className="rua"
+          type="string"
+          placeholder="Rua"
+          {...register("rua")}
+        />
+      </label>
       <div>
-        <form>
-          <MiddleInput name="numero" placeholder="Número" />
-        </form>
-        <form>
-          <ComplementoInput name="complemento" placeholder="Complemento" />
-        </form>
+        <label>
+          <MiddleInput
+            className="numero"
+            type="number"
+            placeholder="Número"
+            {...register("numero")}
+          />
+        </label>
+        <label>
+          <ComplementoInput
+            className="complemento"
+            type="string"
+            placeholder="Complemento"
+            {...register("complemento")}
+          />
+        </label>
       </div>
       <div>
-        <form>
-          <MiddleInput name="bairro" placeholder="Bairro" />
-        </form>
-        <form>
-          <CidadeInput name="cidade" placeholder="Cidade" />
-        </form>
-        <form>
-          <MinInput name="uf" placeholder="UF" />
-        </form>
+        <label>
+          <MiddleInput
+            className="bairro"
+            type="string"
+            placeholder="Bairro"
+            {...register("bairro")}
+          />
+        </label>
+        <label>
+          <CidadeInput
+            className="cidade"
+            type="string"
+            placeholder="Cidade"
+            {...register("cidade")}
+          />
+        </label>
+        <label>
+          <MinInput
+            className="uf"
+            type="string"
+            placeholder="UF"
+            {...register("uf")}
+          />
+        </label>
       </div>
     </FormContainer>
   )

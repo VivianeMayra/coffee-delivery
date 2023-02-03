@@ -1,8 +1,8 @@
 import { CurrencyDollar, MapPin, Timer } from "phosphor-react"
-import { useLocation } from "react-router-dom"
+
 import Illustration from "../../assets/Illustration.svg"
-import { useAdress } from "../../hooks/useAdress"
-import { NewAdressFormData } from "../Checkout"
+import { useInformationOrder } from "../../hooks/useInformationOrder"
+
 import {
   ContainerMain,
   Frame,
@@ -11,15 +11,8 @@ import {
   TextContainer,
 } from "./styles"
 
-interface LocationType {
-  state: NewAdressFormData
-}
-
 export function Success() {
-  const { adressItems } = useAdress()
-  console.log(adressItems)
-
-  const { state } = useLocation() as LocationType
+  const { informationOrder } = useInformationOrder()
 
   return (
     <ContainerMain>
@@ -37,11 +30,12 @@ export function Success() {
               <h2>
                 Entrega em{" "}
                 <strong>
-                  {state.rua},{state.numero}
+                  {informationOrder.adress.rua},{informationOrder.adress.numero}
                 </strong>
               </h2>
               <span>
-                {state.bairro} - {state.cidade}, {state.uf}
+                {informationOrder.adress.bairro} -{" "}
+                {informationOrder.adress.cidade}, {informationOrder.adress.uf}
               </span>
             </TextContainer>
           </div>
@@ -63,7 +57,7 @@ export function Success() {
             <TextContainer>
               <h2>Pagamento na entrega</h2>
               <span>
-                <strong>Cartão de crédito</strong>
+                <strong>{informationOrder.paymentType}</strong>
               </span>
             </TextContainer>
           </div>

@@ -8,7 +8,7 @@ export const FormContainer = styled.form`
   gap: 16px;
   > div {
     display: flex;
-    > form {
+    > label {
       margin-right: 0.75rem;
     }
   }

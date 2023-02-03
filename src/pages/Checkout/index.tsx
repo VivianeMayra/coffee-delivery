@@ -24,23 +24,30 @@ import { NavLink, useNavigate } from "react-router-dom"
 import { useCart } from "../../hooks/useCart"
 import { CoffeeCartCard } from "./components/CoffeeCartCard"
 import { formatMoney } from "../../utils/formatMoney"
-import { useAdress } from "../../hooks/useAdress"
-import { useState } from "react"
+
 import { NewAdressForm } from "./components/NewAdressForm"
 import * as zod from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm, FormProvider } from "react-hook-form"
+import { useInformationOrder } from "../../hooks/useInformationOrder"
+import { useState } from "react"
 
 const DELIVERY_PRICE = 4.5
 
 /*Atributos que desejo capturar */
 export interface Adress {
-  id: number
   rua: string
   numero: number
   bairro: string
   cidade: string
   uf: string
+}
+
+export type PaymentType = "debito" | "credito" | "dinheiro" | ""
+
+export interface InformationOrder {
+  adress: Adress
+  paymentType: PaymentType
 }
 
 interface AdressProps {
@@ -66,8 +73,8 @@ export function Checkout({ adress }: AdressProps) {
   const formattedCartTotal = formatMoney(cartTotal)
   const formattedDeliveryPrice = formatMoney(DELIVERY_PRICE)
   /*Criando os estados */
-  const [information] = useState("")
-  const { addAdressToForm } = useAdress()
+  const { addInformationOrderToForm } = useInformationOrder()
+  const [paymentType, setPaymentType] = useState<PaymentType>("")
 
   const newAdressForm = useForm<NewAdressFormData>({
     resolver: zodResolver(newAdressFormValidationSchema),
@@ -82,13 +89,22 @@ export function Checkout({ adress }: AdressProps) {
     },
   })
 
-  const { handleSubmit } = newAdressForm
+  const { getValues } = newAdressForm
   const navigate = useNavigate()
 
-  function handleCreateNewAdress(data: NewAdressFormData) {
-    navigate("/success", {
-      state: data,
-    })
+  function handlePaymentType(type: PaymentType) {
+    if (paymentType === type) {
+      setPaymentType("")
+    } else {
+      setPaymentType(type)
+    }
+  }
+
+  function handleCreateNewInformationOrder() {
+    const { rua, cidade, bairro, uf, numero } = getValues()
+    const adress = { rua, cidade, bairro, uf, numero }
+    addInformationOrderToForm(adress, paymentType)
+    navigate("/success")
   }
 
   return (
@@ -122,19 +138,28 @@ export function Checkout({ adress }: AdressProps) {
             </TextContainer>
           </div>
           <ButtonsContainer>
-            <button>
+            <button
+              className={paymentType === "credito" ? "selected" : ""}
+              onClick={() => handlePaymentType("credito")}
+            >
               <IconPay>
                 <CreditCard size={16} />
               </IconPay>
               Cartão de Crédito
             </button>
-            <button>
+            <button
+              className={paymentType === "debito" ? "selected" : ""}
+              onClick={() => handlePaymentType("debito")}
+            >
               <IconPay>
                 <Bank size={16} />
               </IconPay>
               Cartão de débito
             </button>
-            <button>
+            <button
+              className={paymentType === "dinheiro" ? "selected" : ""}
+              onClick={() => handlePaymentType("dinheiro")}
+            >
               <IconPay>
                 <Money size={16} />
               </IconPay>
@@ -165,14 +190,20 @@ export function Checkout({ adress }: AdressProps) {
             </TotalSum>
           </Total>
           <ConfirmationButton
-            onSubmit={handleSubmit(handleCreateNewAdress)}
+            onClick={handleCreateNewInformationOrder}
             disabled={cartQuantity <= 0}
             type="submit"
           >
-            <NavLink to="/success">Confirmar pedido</NavLink>
+            Confirmar pedido
           </ConfirmationButton>
         </CoffeeContainer>
       </Frame>
     </CheckoutContainer>
   )
 }
+
+/*interface InformationOrder {
+  address: Adress;
+  paymentType: "tipo1" | "tipo2" | "tipo3" 
+}
+*/
