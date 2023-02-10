@@ -31,13 +31,15 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm, FormProvider } from "react-hook-form"
 import { useInformationOrder } from "../../hooks/useInformationOrder"
 import { useState } from "react"
+/*Fazendo a validação do formulário */
+import * as yup from "yup"
 
 const DELIVERY_PRICE = 4.5
 
 /*Atributos que desejo capturar */
 export interface Adress {
   rua: string
-  numero: number
+  numero: string
   bairro: string
   cidade: string
   uf: string
@@ -57,7 +59,7 @@ interface AdressProps {
 const newAdressFormValidationSchema = zod.object({
   cep: zod.string().min(1, "Informe o CEP"),
   rua: zod.string().min(1, "Informe a Rua"),
-  numero: zod.number().min(1, "Informe o número"),
+  numero: zod.string().min(1, "Informe o número"),
   complemento: zod.string(),
   bairro: zod.string().min(1, "Informe o bairro"),
   cidade: zod.string().min(1, "Informe a cidade"),
@@ -81,7 +83,7 @@ export function Checkout({ adress }: AdressProps) {
     defaultValues: {
       cep: "",
       rua: "",
-      numero: 0,
+      numero: "",
       complemento: "",
       bairro: "",
       cidade: "",
