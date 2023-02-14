@@ -175,12 +175,10 @@ export const ConfirmationButton = styled.button`
   background: ${(props) => props.theme["yellow-middle"]};
   border: none;
   border-radius: 6px;
-  > a {
-    text-decoration: none;
-    color: white;
-    text-transform: uppercase;
-    font-weight: 700;
-  }
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 700;
 
   &:hover {
     background: ${(props) => props.theme["yellow-dark"]};
