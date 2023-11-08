@@ -9,7 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.6.1",
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
     "@hookform/resolvers": "^2.9.10",
+    "framer-motion": "^10.12.12",
     "immer": "^9.0.19",
     "phosphor-react": "^1.4.1",
     "react": "^18.2.0",

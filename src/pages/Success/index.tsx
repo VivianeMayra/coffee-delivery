@@ -9,6 +9,7 @@ import {
   Icon,
   InfoContainer,
   TextContainer,
+  TextContainerTitle,
 } from "./styles"
 
 export function Success() {
@@ -17,10 +18,10 @@ export function Success() {
   return (
     <ContainerMain>
       <Frame>
-        <TextContainer>
+        <TextContainerTitle>
           <h1>Uhu!Pedido Confirmado</h1>
           <h2>Agora é só aguardar que logo o café chegará até você</h2>
-        </TextContainer>
+        </TextContainerTitle>
         <InfoContainer>
           <div>
             <Icon type="location">

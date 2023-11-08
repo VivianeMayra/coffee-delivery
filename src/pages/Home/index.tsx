@@ -1,7 +1,5 @@
 import {
   CoffeList,
-  Container,
-  HomeContainer,
   IconContainer,
   MenuContainer,
   TextContainer,
@@ -10,11 +8,28 @@ import ImageCoffee from "../../assets/ImageCoffee.svg"
 import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react"
 import { CoffeeCard } from "./components/CoffeeCard"
 import { coffees } from "../../Coffees/coffees"
+import { Container, Box } from "@chakra-ui/react"
 
 export function Home() {
   return (
-    <Container>
-      <HomeContainer>
+    <Container
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      minWidth={{ base: "70%", md: "100%" }}
+    >
+      <Box
+        display="flex"
+        flexDirection={{ base: "column", md: "row" }}
+        mt={20}
+        mb={10}
+        marginLeft={{ base: "200px", md: 0 }}
+        alignItems="center"
+        justifyContent={{ base: "center", md: "space-around" }}
+        maxWidth="100%"
+        gap={{ base: "0", md: "100px" }}
+        textAlign={{ base: "center", md: "start" }}
+      >
         <TextContainer>
           <h1>Encontre o café perfeito para qualquer hora do dia</h1>
           <h2>
@@ -48,16 +63,27 @@ export function Home() {
             </li>
           </ul>
         </TextContainer>
-        <img src={ImageCoffee} alt="" />
-      </HomeContainer>
-      <MenuContainer>
-        <h2>Nossos Cafés</h2>
-        <CoffeList>
-          {coffees.map((coffee) => (
-            <CoffeeCard key={coffee.id} coffee={coffee} />
-          ))}
-        </CoffeList>
-      </MenuContainer>
+        <Box marginTop={{ base: "2rem", md: "0" }} minWidth="50%">
+          <img src={ImageCoffee} alt="" />
+        </Box>
+      </Box>
+      <Box
+        display="flex"
+        flexDirection="column"
+        mt={20}
+        mb={20}
+        alignItems="center"
+        marginLeft={{ base: "7rem", md: "0" }}
+      >
+        <MenuContainer>
+          <h2>Nossos Cafés</h2>
+          <CoffeList>
+            {coffees.map((coffee) => (
+              <CoffeeCard key={coffee.id} coffee={coffee} />
+            ))}
+          </CoffeList>
+        </MenuContainer>
+      </Box>
     </Container>
   )
 }

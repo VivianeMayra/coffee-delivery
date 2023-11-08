@@ -20,7 +20,7 @@ import {
   TotalSum,
 } from "./style"
 
-import { NavLink, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { useCart } from "../../hooks/useCart"
 import { CoffeeCartCard } from "./components/CoffeeCartCard"
 import { formatMoney } from "../../utils/formatMoney"
@@ -32,7 +32,6 @@ import { useForm, FormProvider } from "react-hook-form"
 import { useInformationOrder } from "../../hooks/useInformationOrder"
 import { useState } from "react"
 /*Fazendo a validação do formulário */
-import * as yup from "yup"
 
 const DELIVERY_PRICE = 4.5
 

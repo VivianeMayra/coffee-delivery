@@ -1,15 +1,26 @@
 import styled from "styled-components"
 export const CheckoutContainer = styled.div`
   display: flex;
-  margin-top: 5rem;
+  justify-content: center;
+  align-items: flex-start;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
 `
 export const Frame = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-right: 15rem;
+  margin-right: 2rem;
   padding: 0px;
   gap: 12px;
+
+  @media (max-width: 768px) {
+    gap: 3rem;
+  }
 
   > h2 {
     font-family: "Baloo 2";
@@ -25,13 +36,11 @@ export const Frame = styled.div`
 export const Location = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   padding: 2.5rem;
   gap: 2rem;
   background: ${(props) => props.theme["base-card"]};
   border-radius: 6px;
-  width: 640px;
-  height: 372px;
 
   > div {
     display: flex;
@@ -40,7 +49,7 @@ export const Location = styled.div`
     padding: 0px;
     gap: 8px;
 
-    width: 35rem;
+    min-width: 30rem;
     height: 2.75rem;
   }
 `
@@ -83,6 +92,13 @@ export const PayContainer = styled.div`
   gap: 2rem;
   background: ${(props) => props.theme["base-card"]};
   border-radius: 6px;
+  max-width: 35rem;
+
+  @media (max-width: 768px) {
+    margin-top: 3rem;
+    max-width: 35rem;
+  }
+
   > div {
     display: flex;
     flex-direction: row;
@@ -96,7 +112,7 @@ export const PayContainer = styled.div`
 export const ButtonsContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 0px;
   gap: 12px;
@@ -137,11 +153,12 @@ export const CoffeeContainer = styled.div`
   align-items: flex-start;
   padding: 40px;
   gap: 24px;
-  width: 448px;
-  left: 832px;
-  top: 182px;
   background: ${(props) => props.theme["base-card"]};
   border-radius: 6px 44px;
+
+  @media (max-width: 768px) {
+    min-width: 35rem;
+  }
 `
 export const Total = styled.div`
   display: flex;
@@ -159,6 +176,10 @@ export const Total = styled.div`
     gap: 8px;
     width: 368px;
     height: 21px;
+
+    @media (max-width: 768px) {
+      width: 450px;
+    }
   }
 `
 export const TotalSum = styled.div`
@@ -179,6 +200,10 @@ export const ConfirmationButton = styled.button`
   color: white;
   text-transform: uppercase;
   font-weight: 700;
+
+  @media (max-width: 768px) {
+    width: 30rem;
+  }
 
   &:hover {
     background: ${(props) => props.theme["yellow-dark"]};

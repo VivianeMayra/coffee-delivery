@@ -3,6 +3,7 @@ import logoCoffee from "../../assets/logoCoffee.svg"
 import { MapPin, ShoppingCart } from "phosphor-react"
 import { NavLink } from "react-router-dom"
 import { useCart } from "../../hooks/useCart"
+
 export function Header() {
   const { cartQuantity } = useCart()
   return (
@@ -10,6 +11,7 @@ export function Header() {
       <NavLink to="/">
         <img src={logoCoffee} alt="" />
       </NavLink>
+
       <nav>
         <div className="location">
           <MapPin size={22} weight="fill" />

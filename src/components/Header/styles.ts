@@ -1,13 +1,20 @@
 import styled from "styled-components"
 export const HeaderContainer = styled.header`
-  background: ${(props) => props.theme["background-app"]};
+  width: 100%;
+  background: ${(props) => props.theme["white"]};
+  height: 4rem;
+  padding: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 5;
+
+  @media (min-width: 1028px) {
+    width: 100%;
+  }
 
   nav {
     display: flex;
@@ -43,8 +50,8 @@ export const HeaderContainer = styled.header`
         width: 1.25rem;
         height: 1.25rem;
         border-radius: 50%;
-        top: calc(-1.25rem / 2);
-        right: calc(-1.25rem / 2);
+        top: 24px;
+        right: 35px;
         color: white;
         display: flex;
         align-items: center;

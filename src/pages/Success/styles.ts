@@ -2,27 +2,41 @@ import styled from "styled-components"
 
 export const ContainerMain = styled.div`
   display: flex;
-  margin-top: 5rem;
-  justify-content: space-between;
+  margin-top: 2rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin-top: 5rem;
+    gap: 5rem;
+  }
+
+  > img {
+    min-width: 70%;
+  }
 `
 export const Frame = styled.div`
   display: flex;
   flex-direction: column;
 `
-export const TextContainer = styled.div`
+export const TextContainerTitle = styled.div`
   display: flex;
   flex-direction: column;
   > h1 {
-    width: 22.06rem;
-    height: 2.62rem;
-    left: calc(50% - 22.06rem / 2 - 23.96rem);
-    top: 11.5rem;
     font-family: "Baloo 2";
     font-style: normal;
     font-weight: 800;
-    font-size: 2rem;
+    font-size: 36px;
     line-height: 130%;
     color: ${(props) => props.theme["yellow-dark"]};
+  }
+
+  @media (max-width: 768px) {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
   }
 `
 export const InfoContainer = styled.div`
@@ -38,12 +52,33 @@ export const InfoContainer = styled.div`
   border-radius: 0.37rem 2rem;
   border-color: rgba(128, 71, 248, 1);
 
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
   > div {
     display: flex;
     flex-direction: row;
     align-items: center;
     padding: 0px;
     gap: 12px;
+  }
+`
+
+export const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  > h1 {
+    font-family: "Baloo 2";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 2rem;
+    line-height: 130%;
+    color: ${(props) => props.theme["yellow-dark"]};
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
   }
 `
 export const Icon = styled.div<any>`
