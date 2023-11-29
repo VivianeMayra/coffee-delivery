@@ -67,7 +67,7 @@ const newAdressFormValidationSchema = zod.object({
 
 export type NewAdressFormData = zod.infer<typeof newAdressFormValidationSchema>
 
-export function Checkout({ adress }: AdressProps) {
+export function Checkout() {
   const { cartItems, cartItemsTotal, cartQuantity } = useCart()
   const cartTotal = DELIVERY_PRICE + cartItemsTotal
   const formattedItensTotal = formatMoney(cartItemsTotal)
