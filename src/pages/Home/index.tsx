@@ -1,5 +1,6 @@
 import {
   CoffeList,
+  ContainerHome,
   IconContainer,
   MenuContainer,
   TextContainer,
@@ -8,26 +9,21 @@ import ImageCoffee from "../../assets/ImageCoffee.svg"
 import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react"
 import { CoffeeCard } from "./components/CoffeeCard"
 import { coffees } from "../../Coffees/coffees"
-import { Container, Box } from "@chakra-ui/react"
+import { Box } from "@chakra-ui/react"
 
 export function Home() {
   return (
-    <Container
-      display="flex"
-      flexDirection="column"
-      alignItems="center"
-      minWidth={{ base: "70%", md: "100%" }}
-    >
+    <ContainerHome>
       <Box
         display="flex"
         flexDirection={{ base: "column", md: "row" }}
         mt={20}
         mb={10}
-        marginLeft={{ base: "200px", md: 0 }}
+        marginLeft={{ base: "0px", md: "130px" }}
         alignItems="center"
-        justifyContent={{ base: "center", md: "space-around" }}
+        justifyContent={{ base: "center", md: "space-between" }}
         maxWidth="100%"
-        gap={{ base: "0", md: "100px" }}
+        gap={{ base: "0", md: "56px" }}
         textAlign={{ base: "center", md: "start" }}
       >
         <TextContainer>
@@ -63,7 +59,7 @@ export function Home() {
             </li>
           </ul>
         </TextContainer>
-        <Box marginTop={{ base: "2rem", md: "0" }} minWidth="50%">
+        <Box marginTop={{ base: "2rem", md: "0" }} minWidth="44%">
           <img src={ImageCoffee} alt="" />
         </Box>
       </Box>
@@ -73,7 +69,7 @@ export function Home() {
         mt={20}
         mb={20}
         alignItems="center"
-        marginLeft={{ base: "7rem", md: "0" }}
+        marginLeft={{ base: "4rem", md: "0" }}
       >
         <MenuContainer>
           <h2>Nossos Cafés</h2>
@@ -84,6 +80,6 @@ export function Home() {
           </CoffeList>
         </MenuContainer>
       </Box>
-    </Container>
+    </ContainerHome>
   )
 }

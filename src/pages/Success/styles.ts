@@ -2,19 +2,19 @@ import styled from "styled-components"
 
 export const ContainerMain = styled.div`
   display: flex;
-  margin-top: 2rem;
+  margin: 5rem auto;
   width: 100%;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 
-  @media (max-width: 768px) {
+  @media (max-width: 480px) {
     flex-direction: column;
     margin-top: 5rem;
     gap: 5rem;
   }
 
   > img {
-    min-width: 70%;
+    min-width: 45%;
   }
 `
 export const Frame = styled.div`

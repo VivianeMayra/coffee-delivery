@@ -8,9 +8,9 @@ export const LayoutContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media (min-width: 1028px) {
-    width: 70%;
-    margin: 5rem auto;
+  @media (min-width: 1020px) {
+    width: 100%;
+    margin: 0 auto;
     height: 100%;
   }
 `

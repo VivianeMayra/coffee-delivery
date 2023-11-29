@@ -1,5 +1,20 @@
 import styled from "styled-components"
 
+export const ContainerHome = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 80%;
+
+  @media (max-width: 480px) {
+    min-width: 70%;
+  }
+
+  @media (max-width: 1024px) {
+    min-width: 156%;
+  }
+`
+
 export const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -8,9 +23,10 @@ export const TextContainer = styled.div`
   gap: 1rem;
   max-width: "50%";
 
-  @media (max-width: 768px) {
+  @media (max-width: 480px) {
     align-items: center;
     gap: 2rem;
+    margin-left: 2rem;
   }
 
   h1 {
@@ -36,7 +52,7 @@ export const TextContainer = styled.div`
     display: grid;
     grid-template-columns: 400px 200px;
 
-    @media (max-width: 768px) {
+    @media (max-width: 480px) {
       grid-template-columns: 300px 200px;
       margin-right: 80px;
     }
@@ -82,8 +98,12 @@ export const MenuContainer = styled.div`
   right: 0px;
   top: 40.5rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 480px) {
     margin-left: 85px;
+  }
+
+  @media (max-width: 1024px) {
+    margin: 0 auto;
   }
 
   h2 {
@@ -106,9 +126,13 @@ export const CoffeList = styled.div`
   row-gap: 2.5rem;
   margin-top: 3.5rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 480px) {
     /* ou qualquer largura de tela que você preferir */
     grid-template-columns: repeat(2, 1fr); /* exibe apenas uma coluna */
     column-gap: 2.5rem;
+  }
+
+  @media (max-width: 1024px) {
+    column-gap: 5rem;
   }
 `

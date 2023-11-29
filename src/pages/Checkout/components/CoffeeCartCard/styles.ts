@@ -39,6 +39,11 @@ export const TitlesAndButtons = styled.div`
     align-items: center;
     padding: 0px;
     gap: 8px;
+    width: 200px;
+
+    @media (max-width: 480px) {
+      width: 270px;
+    }
 
     > button {
       display: flex;

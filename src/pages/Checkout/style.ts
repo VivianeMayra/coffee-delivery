@@ -3,11 +3,16 @@ export const CheckoutContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  margin-top: 5rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 480px) {
     display: flex;
     flex-direction: column;
     gap: 3rem;
+  }
+
+  @media (max-width: 1024px) {
+    margin: 5rem auto;
   }
 `
 export const Frame = styled.div`
@@ -156,7 +161,7 @@ export const CoffeeContainer = styled.div`
   background: ${(props) => props.theme["base-card"]};
   border-radius: 6px 44px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 480px) {
     min-width: 35rem;
   }
 `
@@ -173,11 +178,11 @@ export const Total = styled.div`
     flex-direction: row;
     align-items: center;
     padding: 0px;
-    gap: 8px;
-    width: 368px;
+    gap: 15px;
+    width: 400px;
     height: 21px;
 
-    @media (max-width: 768px) {
+    @media (max-width: 480px) {
       width: 450px;
     }
   }
@@ -191,7 +196,7 @@ export const ConfirmationButton = styled.button`
   align-items: center;
   padding: 0.75rem 0.5rem;
   gap: 4px;
-  width: 23rem;
+  width: 25rem;
   height: 2.87rem;
   background: ${(props) => props.theme["yellow-middle"]};
   border: none;
@@ -201,7 +206,7 @@ export const ConfirmationButton = styled.button`
   text-transform: uppercase;
   font-weight: 700;
 
-  @media (max-width: 768px) {
+  @media (max-width: 480px) {
     width: 30rem;
   }
 

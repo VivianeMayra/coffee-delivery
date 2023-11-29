@@ -13,7 +13,11 @@ export const HeaderContainer = styled.header`
   z-index: 5;
 
   @media (min-width: 1028px) {
-    width: 100%;
+    width: 95%;
+
+    img {
+      margin-left: 7rem;
+    }
   }
 
   nav {

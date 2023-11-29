@@ -22,7 +22,7 @@ export const InputStyleContainer = styled.div<InputContainerProps>`
   background: ${(props) => props.theme["base-input"]};
   display: flex;
   align-items: center;
-  transition: 0.4s;
+  transition: 0.1s;
   display: flex;
   align-items: center;
   justify-content: space-between;
