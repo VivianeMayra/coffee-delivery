@@ -29,6 +29,14 @@ export const TextContainer = styled.div`
     margin-left: 2rem;
   }
 
+  @media (width: 1024px) {
+    margin-left: 5rem;
+  }
+
+  @media (min-width: 1270px) {
+    margin-left: 0rem;
+  }
+
   h1 {
     font-family: "Baloo 2";
     font-style: normal;

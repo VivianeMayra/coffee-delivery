@@ -12,11 +12,17 @@ export const HeaderContainer = styled.header`
   left: 0;
   z-index: 5;
 
-  @media (min-width: 1028px) {
+  @media (min-width: 1024px) {
     width: 95%;
 
     img {
       margin-left: 7rem;
+    }
+  }
+
+  @media (min-width: 1270px) {
+    img {
+      margin-left: 2rem;
     }
   }
 

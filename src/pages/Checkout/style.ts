@@ -12,7 +12,9 @@ export const CheckoutContainer = styled.div`
   }
 
   @media (max-width: 1024px) {
-    margin: 5rem auto;
+    margin: auto;
+    margin-top: 5rem;
+    margin-left: 5rem;
   }
 `
 export const Frame = styled.div`

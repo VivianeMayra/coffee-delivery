@@ -2,7 +2,9 @@ import styled from "styled-components"
 
 export const ContainerMain = styled.div`
   display: flex;
-  margin: 5rem auto;
+  margin: 0 auto;
+  margin-top: 5rem;
+  margin-left: 2rem;
   width: 100%;
   justify-content: center;
   align-items: flex-end;
@@ -11,6 +13,7 @@ export const ContainerMain = styled.div`
     flex-direction: column;
     margin-top: 5rem;
     gap: 5rem;
+    margin-left: 0;
   }
 
   > img {

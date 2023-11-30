@@ -19,7 +19,7 @@ export function Home() {
         flexDirection={{ base: "column", md: "row" }}
         mt={20}
         mb={10}
-        marginLeft={{ base: "0px", md: "130px" }}
+        marginLeft={{ base: "0px", md: "65px" }}
         alignItems="center"
         justifyContent={{ base: "center", md: "space-between" }}
         maxWidth="100%"
