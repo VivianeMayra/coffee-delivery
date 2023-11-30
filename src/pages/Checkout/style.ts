@@ -11,7 +11,7 @@ export const CheckoutContainer = styled.div`
     gap: 3rem;
   }
 
-  @media (max-width: 1024px) {
+  @media (width: 1024px) {
     margin: auto;
     margin-top: 5rem;
     margin-left: 5rem;
